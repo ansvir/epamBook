@@ -7,7 +7,7 @@ public class ChapterOne {
     /**
      * @param num range
      * @return last fibonacci number of @param range
-     * the sense of the 12 task from the book is to calculate all fibonacci numbers for numbers from 0 to @param
+     * the sense of the 12 task is to calculate all fibonacci numbers for numbers from 0 to @param
      */
     public static int task12(int num) {
         if(num==0) {
