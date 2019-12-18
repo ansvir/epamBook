@@ -4,6 +4,6 @@ import part.one.ChapterOne;
 
 public class Main {
     public static void main(String[] args) {
-        ChapterOne.task12(8);
+        System.out.println(ChapterOne.task12(8));
     }
 }
