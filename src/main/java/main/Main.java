@@ -12,8 +12,15 @@ public class Main {
                 {1, 2, 4, 5, 7}
         };
 
-        int[][] arr=ChapterTwo.task10(matrix);
-        ChapterTwo.printMatrix(arr);
-        ChapterTwo.task10(new int[][]{{}});
+        int[][] matrix2={
+                {5,5,5,5,5},
+                {1,1,1,1,1},
+                {7,7,7,7,7},
+                {8,8,8,10,8},
+                {4,4,4,4,4}
+        };
+
+        int[][] result=ChapterTwo.task10(matrix2);
+        ChapterTwo.printMatrix(result);
     }
 }
