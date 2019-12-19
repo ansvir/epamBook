@@ -4,9 +4,13 @@ public class ChapterTwo {
 
     public static int[][] task10(int[][] matrix) {
 
-        if(matrix.length<=0) return new int[][] {};
+        int max;
+        try {
+            max=matrix[0][0];
+        } catch (ArrayIndexOutOfBoundsException exc) {
+            return new int[][]{{}};
+        }
 
-        int max=matrix[0][0];
         // 1  2 4  5  7
         // 10 4 5  8  1
         // 2  5 4  10 1
@@ -66,5 +70,14 @@ public class ChapterTwo {
             }
         }
         return newMatrix;
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for(int i=0;i<matrix.length;i++) {
+            for(int j=0;j<matrix[0].length;j++) {
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }
