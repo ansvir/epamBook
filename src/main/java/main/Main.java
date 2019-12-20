@@ -4,7 +4,7 @@ import part.one.ChapterTwo;
 
 public class Main {
     public static void main(String[] args) {
-        int matrix[][]={
+        int[][] matrix ={
                 {1, 2, 4, 5 , 7},
                 {10, 4 ,5, 8, 1},
                 {2,5,4, 10, 1},

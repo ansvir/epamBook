@@ -4,18 +4,20 @@ public class ChapterTwo {
 
     public static int[][] task10(int[][] matrix) {
 
+
         int max;
         try {
             max=matrix[0][0];
-        } catch (ArrayIndexOutOfBoundsException exc) {
+        } catch (Exception exc) {
             return new int[][]{{}};
         }
 
-        // 1  2 4  5  7
-        // 10 4 5  8  1
-        // 2  5 4  10 1
-        // 8  4 10 2  5
-        // 1  2 4  5  7
+        int expectedLength=matrix[0].length;
+        for(int i=0;i<matrix.length;i++) {
+            if(matrix[i].length!=expectedLength) {
+                return new int[][] {{}};
+            }
+        }
 
         int newRowsSize=matrix.length;
         int newColumnsSize=matrix[0].length;
@@ -37,7 +39,11 @@ public class ChapterTwo {
             }
         }
 
-        int newMatrix[][] = new int[newRowsSize][newColumnsSize];
+        if(newRowsSize<=0||newColumnsSize<=0) {
+            return new int[][]{{}};
+        }
+
+        int[][] newMatrix = new int[newRowsSize][newColumnsSize];
 
         int l=0;
         int p=0;
