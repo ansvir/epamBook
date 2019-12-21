@@ -3,7 +3,7 @@ package main;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-import part.one.TestChapterTwo;
+import part.one.chapter.two.TestChapterTwo;
 
 public class TestMain {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package part.one;
+package part.one.chapter.one;
 
 /**
  * Class contains solved tasks from firts chapter of first part of a book

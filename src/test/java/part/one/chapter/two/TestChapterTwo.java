@@ -1,6 +1,7 @@
-package part.one;
+package part.one.chapter.two;
 
 import org.junit.Test;
+import part.one.chapter.two.ChapterTwo;
 
 import static org.junit.Assert.fail;
 
@@ -12,7 +13,7 @@ public class TestChapterTwo {
 
         int[][] expectedResult={{}};
 
-        int[][] result=ChapterTwo.task10(matrix);
+        int[][] result= ChapterTwo.task10(matrix);
 
         if(!resultsEqual(result, expectedResult)) fail();
     }
