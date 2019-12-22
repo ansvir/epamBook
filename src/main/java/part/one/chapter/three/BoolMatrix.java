@@ -42,12 +42,14 @@ public class BoolMatrix extends Matrix {
     /**
      * inverses matrix
      */
-    public void inversion() {
-        for(int i=0;i<this.getBoolMatrix().length;i++) {
-            for(int j=0;j<this.getBoolMatrix()[0].length;j++) {
+    public BoolMatrix inverse() {
+        for(int i=0;i<this.boolMatrix.length;i++) {
+            for(int j=0;j<this.boolMatrix[0].length;j++) {
                 this.boolMatrix[i][j]=!this.boolMatrix[i][j];
             }
         }
+
+        return new BoolMatrix(this.boolMatrix);
     }
 
     /**
@@ -65,6 +67,20 @@ public class BoolMatrix extends Matrix {
         return ones;
     }
 
+    /**
+     *
+     * @param bm comparable matrix
+     * @return true if both matrices are the same sized and have same elements
+     */
+    public boolean matrixEqualTo(BoolMatrix bm) {
+        if(!Matrix.matricesSizesEqual(this.getBoolMatrix(),bm.getBoolMatrix())) return false;
+        for(int i=0;i<this.boolMatrix.length;i++) {
+            for(int j=0;j<this.boolMatrix[0].length;j++) {
+                if(this.boolMatrix[i][j]!=bm.boolMatrix[i][j]) return false;
+            }
+        }
+        return true;
+    }
     public Boolean[][] getBoolMatrix() {
         return this.boolMatrix;
     }

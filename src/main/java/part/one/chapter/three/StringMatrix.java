@@ -9,7 +9,28 @@ public class StringMatrix extends Matrix{
         this.stringMatrix=stringMatrix;
     }
 
-    public void sortAlphabetically() {
+    /**
+     * sorts matrix with strings horizontally alphabetically
+     * for example next
+     * {
+     *         {"Philip","Vitalij","Boris","Nikolaj"},
+     *         {"Ilya","Oleg","Vasilij","Mikhail"},
+     *         {"Vyacheslav","Roman","Ivan","Oleg"},
+     *         {"Grigorij","Anton","Ibragim","Petr"}
+     * }
+     *
+     * gives
+     *
+     * {
+     *         {"Anton", "Boris", "Grigorij", "Ibragim"},
+     *         {"Ilya", "Ivan", "Mikhail", "Nikolaj"},
+     *         {"Oleg", "Oleg", "Petr", "Philip"},
+     *         {"Roman", "Vasilij", "Vitalij", "Vyacheslav"}
+     * }
+     *
+     * @return sorted matrix
+     */
+    public StringMatrix sortAlphabetically() {
         for(int i=0;i<this.stringMatrix.length;i++) {
             for(int j=0;j<this.stringMatrix[0].length;j++) {
                 for(int m=0;m<this.stringMatrix.length;m++) {
@@ -23,6 +44,23 @@ public class StringMatrix extends Matrix{
                 }
             }
         }
+
+        return new StringMatrix(this.stringMatrix);
+    }
+
+    /**
+     * compares string matrices for elements similarity
+     * @param sm comparable matrix
+     * @return "true" if matrices are similar by elements, "false" on the contrary
+     */
+    public boolean matrixEqualTo(StringMatrix sm) {
+        if(!Matrix.matricesSizesEqual(this.getStringMatrix(),sm.getStringMatrix())) return false;
+        for(int i=0;i<this.stringMatrix.length;i++) {
+            for(int j=0;j<this.stringMatrix[0].length;j++) {
+                if(!this.stringMatrix[i][j].equals(sm.stringMatrix[i][j])) return false;
+            }
+        }
+        return true;
     }
 
     public String[][] getStringMatrix() {

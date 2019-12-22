@@ -1,7 +1,6 @@
 package part.one.chapter.two;
 
 import org.junit.Test;
-import part.one.chapter.two.ChapterTwo;
 
 import static org.junit.Assert.fail;
 

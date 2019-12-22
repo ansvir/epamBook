@@ -12,7 +12,7 @@ public class Matrix {
     Matrix(){}
 
     public Object[][] getMatrix() {
-        return this.getMatrix();
+        return this.matrix;
     }
 
     public void setMatrix(Object[][] matrix) {
@@ -24,11 +24,11 @@ public class Matrix {
      * @param matrix comparable matrix
      * @return "true" if the lengths of rows and columns of matrices are equal, "false" on the contrary
      */
-    public boolean matrixEqualTo(Matrix matrix) {
-        if(this.matrix.length!=matrix.getMatrix().length) return false;
-        for(int i=0;i<this.matrix.length;i++) {
-            for(int j=0;j<matrix.getMatrix().length;j++) {
-                if(this.matrix[i].length!=matrix.getMatrix()[j].length) return false;
+    public static <T> boolean matricesSizesEqual(T[][] matrix, T[][] matrix2) {
+        if(matrix.length!=matrix2.length) return false;
+        for(int i=0;i<matrix.length;i++) {
+            for(int j=0;j<matrix2.length;j++) {
+                if(matrix[i].length!=matrix2[j].length) return false;
             }
         }
 
@@ -71,6 +71,30 @@ public class Matrix {
         return this.matrix.length*this.matrix[0].length;
     }
 
+    /**
+     *
+     * @param matrix printable matrix
+     * @param <T> type of matrix
+     * prints matrix to console
+     */
+    public static <T> void printMatrix(T[][] matrix) {
+        for(int i=0;i<matrix.length;i++) {
+            for(int j=0;j<matrix[0].length;j++) {
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean matrixEqualTo(Matrix m) {
+        if(!matricesSizesEqual(this.getMatrix(),m.getMatrix())) return false;
+        for(int i=0;i<this.matrix.length;i++) {
+            for(int j=0;j<this.matrix[0].length;j++) {
+                if(!this.matrix[i][j].equals(m.matrix[i][j])) return false;
+            }
+        }
+        return true;
+    }
     @Override
     public String toString() {
         StringBuilder result=new StringBuilder("matrix:\n");
