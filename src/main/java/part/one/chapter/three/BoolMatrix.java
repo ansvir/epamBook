@@ -12,7 +12,7 @@ public class BoolMatrix extends Matrix {
     /**
      *
      * @param bm matrix to logical disjunction with this.boolMatrix
-     * @return result matrix
+     * @return result matrix in object
      */
     public BoolMatrix disjunction(BoolMatrix bm) {
         Boolean[][] newBoolMatrix=new Boolean[this.boolMatrix.length][this.boolMatrix[0].length];
@@ -27,7 +27,7 @@ public class BoolMatrix extends Matrix {
     /**
      *
      * @param bm matrix to logical conjunction with this.boolMatrix
-     * @return result matrix
+     * @return result matrix in object
      */
     public BoolMatrix conjunction(BoolMatrix bm) {
         Boolean[][] newBoolMatrix=new Boolean[this.boolMatrix.length][this.boolMatrix[0].length];

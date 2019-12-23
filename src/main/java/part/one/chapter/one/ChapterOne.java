@@ -1,7 +1,7 @@
 package part.one.chapter.one;
 
 /**
- * Class contains solved tasks from firts chapter of first part of a book
+ * Class contains solved tasks from first chapter of first part of a book
  */
 public class ChapterOne {
     /**
