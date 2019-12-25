@@ -1,0 +1,5 @@
+FirstWordInString1 string some words other words symbols lastWordInString1
+FirstWordInString2 string some words other words symbols lastWordInString2
+FirstWordInString3 string some words other words symbols lastWordInString3
+FirstWordInString4 string some words other words symbols lastWordInString4
+FirstWordInString5 string some words other words symbols lastWordInString5

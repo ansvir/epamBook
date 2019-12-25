@@ -1,9 +1,8 @@
 package part.two.chapter.one;
 
 import org.junit.Test;
-import part.two.ChapterOne;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 public class TestChapterOne {
 
@@ -14,7 +13,7 @@ public class TestChapterOne {
 
         String result=ChapterOne.task4(str);
 
-        if(!expected.equals(result)) fail();
+        assertEquals(expected,result);
     }
 
     @Test
@@ -24,16 +23,16 @@ public class TestChapterOne {
 
         String result=ChapterOne.task4(str);
 
-        if(!expected.equals(result)) fail();
+        assertEquals(expected,result);
     }
 
     @Test
     public void testString4() {
-        String str="        11111222224444444555557777777         ";
-        String expected="        11111222224444444555557777777         ";
+        String str="aaaa-aaaaaaaa-aaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaa";
+        String expected="a4-a8-a17-a27";
 
         String result=ChapterOne.task4(str);
 
-        if(!expected.equals(result)) fail();
+        assertEquals(expected,result);
     }
 }

@@ -7,6 +7,7 @@ import part.two.chapter.one.TestChapterOne;
 import part.one.chapter.three.TestBoolMatrix;
 import part.one.chapter.three.TestStringMatrix;
 import part.one.chapter.two.TestChapterTwo;
+import part.two.chapter.three.TestChapterThree;
 
 public class TestMain {
 
@@ -18,10 +19,10 @@ public class TestMain {
 
 
     public static void main(String[] args) {
-        Result result=null;
+        Result result;
 
-        result= JUnitCore.runClasses(TestChapterTwo.class);
         System.out.println(PART+"Part one"+RESET);
+        result= JUnitCore.runClasses(TestChapterTwo.class);
         toConsole(result, "ChapterTwo: task10");
 
         result= JUnitCore.runClasses(TestBoolMatrix.class);
@@ -30,9 +31,12 @@ public class TestMain {
         result= JUnitCore.runClasses(TestStringMatrix.class);
         toConsole(result, "ChapterThree: StringMatrix");
 
-        result= JUnitCore.runClasses(TestChapterOne.class);
         System.out.println(PART+"Part two"+RESET);
+        result= JUnitCore.runClasses(TestChapterOne.class);
         toConsole(result, "ChapterOne: task4");
+
+        result=JUnitCore.runClasses(TestChapterThree.class);
+        toConsole(result,"ChapterThree: task10");
     }
 
     private static void toConsole(Result result, String chapterAndTask) {
