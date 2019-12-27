@@ -6,8 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class TestChapterThree {
 
@@ -21,10 +20,7 @@ public class TestChapterThree {
                 "FirstWordInString4 string some words other words symbols lastWordInString4\n"+
                 "FirstWordInString5 string some words other words symbols lastWordInString5";
 
-        if(!writeToFile(file, input)) {
-            System.err.println("Error while writing to file");
-            fail();
-        };
+        assertTrue(writeToFile(file, input));
 
         String expectedResult="lastWordInString1 string some words other words symbols FirstWordInString1\n"+
                 "lastWordInString2 string some words other words symbols FirstWordInString2\n"+
@@ -53,10 +49,7 @@ public class TestChapterThree {
         File file=new File("./src/test/java/part/two/chapter/three/test.txt");
         String input="";
 
-        if(!writeToFile(file, input)) {
-            System.err.println("Error while writing to file");
-            fail();
-        };
+        assertTrue(writeToFile(file, input));
 
         String expectedResult="";
 

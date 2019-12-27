@@ -15,13 +15,13 @@ public class TestMain {
     private final static String CHAPTER="\u001B[34m";
     private final static String DONE="\u001B[32m";
     private final static String FAIL="\u001B[31m";
-    private final static String RESET="\u001B[0m";
+    private final static String END ="\u001B[0m";
 
 
     public static void main(String[] args) {
         Result result;
 
-        System.out.println(PART+"Part one"+RESET);
+        System.out.println(PART+"Part one"+ END);
         result= JUnitCore.runClasses(TestChapterTwo.class);
         toConsole(result, "ChapterTwo: task10");
 
@@ -31,7 +31,7 @@ public class TestMain {
         result= JUnitCore.runClasses(TestStringMatrix.class);
         toConsole(result, "ChapterThree: StringMatrix");
 
-        System.out.println(PART+"Part two"+RESET);
+        System.out.println(PART+"Part two"+ END);
         result= JUnitCore.runClasses(TestChapterOne.class);
         toConsole(result, "ChapterOne: task4");
 
@@ -41,7 +41,7 @@ public class TestMain {
 
     private static void toConsole(Result result, String chapterAndTask) {
 
-        System.out.println(CHAPTER+chapterAndTask+RESET+" - "+(result.wasSuccessful()?DONE+"done"+RESET:FAIL+"fail"+RESET));
+        System.out.println(CHAPTER+chapterAndTask+ END +" - "+(result.wasSuccessful()?DONE+"done"+ END :FAIL+"fail"+ END));
 
         for (Failure failure : result.getFailures()) {
             System.out.println(failure.toString());
