@@ -6,8 +6,9 @@ package part.one.chapter.one;
 public class ChapterOne {
     /**
      * @param num range
-     * @return last fibonacci number of @param range
-     * the sense of the 12 task is to calculate all fibonacci numbers for numbers from 0 to @param
+     * @return last fibonacci number of param range
+     * if number is more than 'int' range returns -1
+     * the sense of the 12 task is to calculate all fibonacci numbers for numbers from 0 to param
      */
     public static int task12(int num) {
         if (num == 0) {
@@ -23,6 +24,9 @@ public class ChapterOne {
 
         for (int i = 1; i < num; i++) {
             previousResult = resultSum;
+            if(previousSum + resultSum < 0) {
+                return -1;
+            }
             resultSum = previousSum + resultSum;
             previousSum = previousResult;
         }

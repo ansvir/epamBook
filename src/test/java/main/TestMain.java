@@ -22,20 +22,23 @@ public class TestMain {
         Result result;
 
         System.out.println(PART+"Part one"+ END);
-        result= JUnitCore.runClasses(TestChapterTwo.class);
+        result = JUnitCore.runClasses(part.one.chapter.one.TestChapterOne.class);
+        toConsole(result, "ChapterOne: task14");
+
+        result = JUnitCore.runClasses(part.one.chapter.two.TestChapterTwo.class);
         toConsole(result, "ChapterTwo: task10");
 
-        result= JUnitCore.runClasses(TestBoolMatrix.class);
+        result = JUnitCore.runClasses(part.one.chapter.three.TestBoolMatrix.class);
         toConsole(result, "ChapterThree: BoolMatrix");
 
-        result= JUnitCore.runClasses(TestStringMatrix.class);
+        result = JUnitCore.runClasses(part.one.chapter.three.TestStringMatrix.class);
         toConsole(result, "ChapterThree: StringMatrix");
 
         System.out.println(PART+"Part two"+ END);
-        result= JUnitCore.runClasses(TestChapterOne.class);
+        result = JUnitCore.runClasses(part.two.chapter.one.TestChapterOne.class);
         toConsole(result, "ChapterOne: task4");
 
-        result=JUnitCore.runClasses(TestChapterThree.class);
+        result =JUnitCore.runClasses(TestChapterThree.class);
         toConsole(result,"ChapterThree: task10");
     }
 
