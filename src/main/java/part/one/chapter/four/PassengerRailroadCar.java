@@ -17,7 +17,7 @@ public class PassengerRailroadCar extends RailroadCar {
      */
     private double amenities;
 
-    PassengerRailroadCar(int id, String model, int wheels, int passengers, double luggage, double amenities) {
+    public PassengerRailroadCar(int id, String model, int wheels, int passengers, double luggage, double amenities) {
         super(id, model, wheels);
         this.passengers = passengers;
         this.luggage=luggage;
