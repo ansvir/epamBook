@@ -3,11 +3,6 @@ package main;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-import part.two.chapter.one.TestChapterOne;
-import part.one.chapter.three.TestBoolMatrix;
-import part.one.chapter.three.TestStringMatrix;
-import part.one.chapter.two.TestChapterTwo;
-import part.two.chapter.three.TestChapterThree;
 
 public class TestMain {
 
@@ -34,11 +29,14 @@ public class TestMain {
         result = JUnitCore.runClasses(part.one.chapter.three.TestStringMatrix.class);
         toConsole(result, "ChapterThree: StringMatrix");
 
+        result = JUnitCore.runClasses(part.one.chapter.four.TestChapterFour.class);
+        toConsole(result, "ChapterFour: task8");
+
         System.out.println(PART+"Part two"+ END);
         result = JUnitCore.runClasses(part.two.chapter.one.TestChapterOne.class);
         toConsole(result, "ChapterOne: task4");
 
-        result =JUnitCore.runClasses(TestChapterThree.class);
+        result =JUnitCore.runClasses(part.two.chapter.three.TestChapterThree.class);
         toConsole(result,"ChapterThree: task10");
     }
 
