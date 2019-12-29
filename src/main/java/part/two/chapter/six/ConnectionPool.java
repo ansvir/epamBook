@@ -24,7 +24,6 @@ public class ConnectionPool {
     }
 
     public static Connection getConnection() throws SQLException {
-        Connection connection = dataSource.getConnection();
-        return connection;
+        return dataSource.getConnection();
     }
 }
