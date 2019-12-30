@@ -99,6 +99,18 @@ public class PassengerRailroadCar extends RailroadCar {
                 && (Double.compare(this.getLuggage(), prc.getLuggage()) == 0)
                 && (Double.compare(this.getAmenities(), prc.getAmenities()) == 0));
     }
+
+    @Override
+    public String toString() {
+        return "{id: "+this.getId()
+                +", model: "+this.getModel()
+                +", wheels: "+this.getWheels()
+                +", passengers: "+this.getPassengers()
+                +", luggage: "+this.getLuggage()
+                +", amenities: "+this.getAmenities()
+                +"}";
+    }
+
     public class AmenitiesComparator implements Comparator<PassengerRailroadCar> {
         @Override
         public int compare(PassengerRailroadCar a, PassengerRailroadCar b) {

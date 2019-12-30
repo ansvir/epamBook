@@ -54,10 +54,10 @@ public class TestChapterFour {
         idsOrder.add(5);
         idsOrder.add(2);
 
-        if (result.size()!=idsOrder.size()) fail();
+        assertEquals(result.size(), idsOrder.size());
 
         for (int i=0;i<result.size();i++) {
-            if (result.get(i).getId()!=idsOrder.get(i)) fail();
+            assertEquals(idsOrder.get(i), (Integer) result.get(i).getId());
         }
     }
 
