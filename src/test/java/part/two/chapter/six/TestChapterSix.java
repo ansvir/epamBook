@@ -1,8 +1,6 @@
 package part.two.chapter.six;
 
-import org.junit.Assert;
 import org.junit.Test;
-import org.junit.experimental.theories.internal.ParameterizedAssertionError;
 import part.one.chapter.four.PassengerRailroadCar;
 
 import java.sql.SQLException;
@@ -11,8 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class TestChapterSix {
     @Test
@@ -90,8 +87,21 @@ public class TestChapterSix {
 
 
         for (PassengerRailroadCar prc: result) {
-            Assert.assertTrue(expectedResult.containsKey(prc.getId())
+            assertTrue(expectedResult.containsKey(prc.getId())
                     || (prc.getPassengers() != expectedResult.get(prc.getId())));
         }
+    }
+
+    @Test
+    public void testFindFromNegativeRange() {
+        List<PassengerRailroadCar> result = null;
+        try {
+            RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
+            result = rpc.findFromRange(-100,100);
+        } catch (SQLException exc) {
+            System.err.println(exc.toString());
+        }
+
+        assertNull(result);
     }
 }
