@@ -29,8 +29,9 @@ public class ServerThread extends Thread {
     }
     public void run() {
         String menuChoice;
+        boolean exit = false;
         try {
-            while (true) {
+            while (!exit) {
                 os.println("Choose:\n" +
                         "1 Create rail car (\\1)\n" +
                         "2 Actions:\n" +
@@ -144,7 +145,7 @@ public class ServerThread extends Thread {
                     case "\\4": {
                         os.println("exit\n");
                         os.flush();
-                        disconnect();
+                        exit = true;
                         break;
                     }
                     default: {
