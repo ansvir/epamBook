@@ -2,14 +2,27 @@ package part.two.chapter.seven;
 
 import part.one.chapter.four.PassengerRailroadCar;
 
-public class CreateRailCar implements Command{
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.List;
 
-    public boolean execute() {
-        return true;
+public class CreateRailCar implements Command {
+
+    private Menu menu;
+    private List<PassengerRailroadCar> train;
+    private PrintStream os;
+    private BufferedReader is;
+
+    public CreateRailCar(Menu menu, List<PassengerRailroadCar> train, PrintStream os, BufferedReader is) {
+        this.menu = menu;
+        this.train = train;
+        this.os = os;
+        this.is = is;
     }
 
-    private PassengerRailroadCar createRailCar() {
-        return new PassengerRailroadCar();
+    public void execute() throws IOException {
+        menu.createRailCar(train, os, is);
     }
 
 }
