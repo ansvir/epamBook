@@ -124,11 +124,6 @@ public class Menu {
                 result.append("-");
             }
             result.append("\n");
-                    // ---------------------------
-            //          |
-            //          | dasdsadsadsadsadasdsadsa |
-            //          |
-            //          -----------------------------
         }
         os.append(result.toString());
     }

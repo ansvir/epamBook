@@ -14,6 +14,7 @@ public class ServerThread extends Thread {
     private int userId;
     private TrainDAO train;
     public ServerThread(Socket s, int userId) throws IOException {
+        super("user" + userId);
         os = new PrintStream(s.getOutputStream());
         is = new BufferedReader(new InputStreamReader(s.getInputStream()));
         address = s.getInetAddress();
@@ -36,8 +37,7 @@ public class ServerThread extends Thread {
                         "3 Show train (\\3)\n" +
                         "4 Disconnect (\\4)\n");
                 os.flush();
-                menuChoice = is.readLine();
-                if (menuChoice == null) {
+                if ((menuChoice = is.readLine()) == null) {
                     break;
                 }
                 switch (menuChoice) {
