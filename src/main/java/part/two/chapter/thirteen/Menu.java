@@ -1,4 +1,4 @@
-package part.two.chapter.seven;
+package part.two.chapter.thirteen;
 import part.one.chapter.four.PassengerRailroadCar;
 
 import java.io.BufferedReader;
@@ -97,36 +97,12 @@ public class Menu {
 
     public void showTrain(List<PassengerRailroadCar> train, PrintStream os) {
         StringBuilder result = new StringBuilder();
-        int resultLength;
-        result.append("                   ______________________\n" +
-                "       _____      |     __   __   __     |\n" +
-                "       |   |     |     |__| |__| |__|    |\n" +
-                "       |   |____|                        |\n" +
-                "     /                                   |\n" +
-                "   /                                     |\n" +
-                " /_______________________________________|\n");
         for (PassengerRailroadCar rpc : train) {
-            resultLength = rpc.toString().length();
-            for (int i = 0; i < resultLength + 4; i++) {
-                result.append("-");
-            }
-            result.append("\n|");
-            for (int i = 0; i <= resultLength + 1; i++) {
-                result.append(" ");
-            }
-            result.append("|\n| ");
-            result.append(rpc.toString()).append(" |\n|");
-            for (int i = 0; i <= resultLength + 1; i++) {
-                result.append(" ");
-            }
-            result.append("|\n");
-            for (int i = 0; i < resultLength + 4; i++) {
-                result.append("-");
-            }
-            result.append("\n");
+            result.append(rpc.toString()).append("\n");
         }
         os.append(result.toString());
     }
+
     private int readInt(String input) {
         try {
             return Integer.parseInt(input);

@@ -1,11 +1,9 @@
-package part.two.chapter.six;
+package part.two.chapter.twelve;
 
 import part.one.chapter.four.PassengerRailroadCar;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class RailroadPassengerCarDAO extends RailroadPassengerCarAbstractDAO {
@@ -22,7 +20,7 @@ public class RailroadPassengerCarDAO extends RailroadPassengerCarAbstractDAO {
      */
     public int sumPassengers() {
         int result = -1;
-       try (Connection connection = getConnection(); Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(SUM_PASSENGERS);) {
+       try (Connection connection = getConnection(); Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(SUM_PASSENGERS)) {
             rs.next();
             result = rs.getInt(1);
             closeConnection(connection);
@@ -37,7 +35,7 @@ public class RailroadPassengerCarDAO extends RailroadPassengerCarAbstractDAO {
      */
     public double sumLuggage() {
         double result = -1.0;
-        try (Connection connection = getConnection(); Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(SUM_LUGGAGE);){
+        try (Connection connection = getConnection(); Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(SUM_LUGGAGE)){
             rs.next();
             result = rs.getDouble(1);
             closeConnection(connection);
@@ -49,7 +47,7 @@ public class RailroadPassengerCarDAO extends RailroadPassengerCarAbstractDAO {
 
     public List<PassengerRailroadCar> sortByAmenities() {
         List<PassengerRailroadCar> result = null;
-        try (Connection connection = getConnection(); Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(SORT_BY_AMENITIES);){
+        try (Connection connection = getConnection(); Statement s = connection.createStatement(); ResultSet rs = s.executeQuery(SORT_BY_AMENITIES)){
             result = new ArrayList<>();
             while(rs.next()) {
                 result.add(new PassengerRailroadCar(
@@ -102,7 +100,7 @@ public class RailroadPassengerCarDAO extends RailroadPassengerCarAbstractDAO {
         return result;
     }
 
-    public static synchronized RailroadPassengerCarDAO getInstance() throws SQLException {
+    public static synchronized RailroadPassengerCarDAO getInstance() {
         if (instance == null) {
             instance = new RailroadPassengerCarDAO();
         }

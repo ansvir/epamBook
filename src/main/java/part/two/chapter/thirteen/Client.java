@@ -1,4 +1,4 @@
-package part.two.chapter.seven;
+package part.two.chapter.thirteen;
 
 import java.io.*;
 import java.net.Socket;
@@ -13,7 +13,7 @@ public class Client {
             Scanner scanner;
             while (true) {
                 StringBuilder response = new StringBuilder();
-                String tmp = null;
+                String tmp;
                 while ((tmp = is.readLine()) != null && !"".equals(tmp)) {
                     response.append(tmp).append("\n");
                 }

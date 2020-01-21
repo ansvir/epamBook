@@ -1,9 +1,8 @@
-package part.two.chapter.six;
+package part.two.chapter.twelve;
 
 import org.junit.Test;
 import part.one.chapter.four.PassengerRailroadCar;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,18 +10,14 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class TestChapterSix {
+public class TestChapterTwelve {
     @Test
     public void testSumPassengers() {
 
         int expectedResult = 415;
-        int result = -1;
-        try {
-            RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
-            result = rpc.sumPassengers();
-        } catch (SQLException exc) {
-            System.err.println(exc.toString());
-        }
+        int result;
+        RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
+        result = rpc.sumPassengers();
 
         assertEquals(expectedResult, result);
     }
@@ -31,13 +26,9 @@ public class TestChapterSix {
     public void testSumLuggage() {
 
         double expectedResult = 1037.5;
-        double result = -1.0;
-        try {
-            RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
-            result = rpc.sumLuggage();
-        } catch (SQLException exc) {
-            System.err.println(exc.toString());
-        }
+        double result;
+        RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
+        result = rpc.sumLuggage();
 
         if (Double.compare(expectedResult, result) != 0) {
             fail();
@@ -47,13 +38,9 @@ public class TestChapterSix {
     @Test
     public void testSortByAmenities() {
 
-        List<PassengerRailroadCar> result = null;
-        try {
-            RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
-            result = rpc.sortByAmenities();
-        } catch (SQLException exc) {
-            System.err.println(exc.toString());
-        }
+        List<PassengerRailroadCar> result;
+        RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
+        result = rpc.sortByAmenities();
         List<Integer> idsOrder = new ArrayList<>();
         idsOrder.add(4);
         idsOrder.add(3);
@@ -70,13 +57,9 @@ public class TestChapterSix {
 
     @Test
     public void testFindFromRange70To100() {
-        List<PassengerRailroadCar> result = null;
-        try {
-            RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
-            result = rpc.findFromRange(70,100);
-        } catch (SQLException exc) {
-            System.err.println(exc.toString());
-        }
+        List<PassengerRailroadCar> result;
+        RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
+        result = rpc.findFromRange(70,100);
         Map<Integer, Integer> expectedResult = new HashMap<>();
 
         expectedResult.put(1,80);
@@ -94,13 +77,9 @@ public class TestChapterSix {
 
     @Test
     public void testFindFromNegativeRange() {
-        List<PassengerRailroadCar> result = null;
-        try {
-            RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
-            result = rpc.findFromRange(-100,100);
-        } catch (SQLException exc) {
-            System.err.println(exc.toString());
-        }
+        List<PassengerRailroadCar> result;
+        RailroadPassengerCarDAO rpc = RailroadPassengerCarDAO.getInstance();
+        result = rpc.findFromRange(-100,100);
 
         assertNull(result);
     }
