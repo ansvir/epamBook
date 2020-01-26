@@ -1,4 +1,4 @@
-package part.two.chapter.three;
+package part.two.chapter.nine;
 
 import org.junit.Test;
 
@@ -8,12 +8,12 @@ import java.io.IOException;
 
 import static org.junit.Assert.*;
 
-public class TestChapterThree {
+public class TestChapterNine {
 
     @Test
     public void testString() {
 
-        File file=new File("./src/test/java/part/two/chapter/three/test.txt");
+        File file=new File("./src/test/java/part/two/chapter/nine/test.txt");
         String input="FirstWordInString1 string some words other words symbols lastWordInString1\n"+
                 "FirstWordInString2 string some words other words symbols lastWordInString2\n"+
                 "FirstWordInString3 string some words other words symbols lastWordInString3\n"+
@@ -30,7 +30,7 @@ public class TestChapterThree {
 
         String result="";
         try {
-            result=ChapterThree.task10(file);
+            result= ChapterNine.task10(file);
         } catch (InvalidSentenceException exc) {
             System.err.println("Invalid input sentence: "+exc.toString());
             fail();
@@ -46,7 +46,7 @@ public class TestChapterThree {
     @Test
     public void testEmptyString() {
 
-        File file=new File("./src/test/java/part/two/chapter/three/test.txt");
+        File file=new File("./src/test/java/part/two/chapter/nine/test.txt");
         String input="";
 
         assertTrue(writeToFile(file, input));
@@ -55,7 +55,7 @@ public class TestChapterThree {
 
         String result="";
         try {
-            result=ChapterThree.task10(file);
+            result= ChapterNine.task10(file);
         } catch (InvalidSentenceException exc) {
             System.err.println("Invalid input sentence: "+exc.toString());
             fail();

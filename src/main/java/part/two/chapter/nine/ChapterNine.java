@@ -1,4 +1,4 @@
-package part.two.chapter.three;
+package part.two.chapter.nine;
 
 
 import java.io.File;
@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ChapterThree {
+public class ChapterNine {
 
     public static String task10(File file) throws InvalidSentenceException{
-        StringBuilder input = new StringBuilder("");
-        StringBuilder result=new StringBuilder("");
-        int symbol = 0;
+        StringBuilder input = new StringBuilder();
+        StringBuilder result=new StringBuilder();
+        int symbol;
         try (FileReader fr = new FileReader(file)) {
             while ((symbol = fr.read()) != -1) {
                 input.append((char) symbol);
@@ -52,7 +52,7 @@ public class ChapterThree {
             result.append(s).append("\n");
         }
 
-        return result.substring(0,result.length()-1).toString();
+        return result.substring(0,result.length()-1);
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package part.two.chapter.six;
+package part.two.chapter.twelve;
 
 import part.one.chapter.four.PassengerRailroadCar;
 

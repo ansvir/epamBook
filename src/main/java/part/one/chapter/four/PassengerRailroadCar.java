@@ -20,38 +20,38 @@ public class PassengerRailroadCar extends RailroadCar {
     public PassengerRailroadCar(int id, String model, int wheels, int passengers, double luggage, double amenities) {
         super(id, model, wheels);
         this.passengers = passengers;
-        this.luggage=luggage;
-        this.amenities=amenities;
+        this.luggage = luggage;
+        this.amenities = amenities;
     }
 
-    PassengerRailroadCar() {}
+    public PassengerRailroadCar() {}
 
     public int sumPassengers(List<PassengerRailroadCar> passengerTrain) {
-        int sum=0;
+        int sum = 0;
         for(PassengerRailroadCar prc: passengerTrain) {
-            sum+=prc.getPassengers();
+            sum += prc.getPassengers();
         }
         return sum;
     }
 
     public double sumLuggage(List<PassengerRailroadCar> passengerTrain) {
-        double sum=0.0;
+        double sum = 0.0;
         for(PassengerRailroadCar prc: passengerTrain) {
-            sum+=prc.getLuggage();
+            sum += prc.getLuggage();
         }
         return sum;
     }
 
     public List<PassengerRailroadCar> sortByAmenities(List<PassengerRailroadCar> passengerTrain) {
-        List<PassengerRailroadCar> result=new ArrayList<>(passengerTrain);
+        List<PassengerRailroadCar> result = new ArrayList<>(passengerTrain);
         result.sort(new AmenitiesComparator());
         return result;
     }
 
     public List<PassengerRailroadCar> listCarsByPassengersRange(List<PassengerRailroadCar> passengerTrain, int from, int to) {
-        List<PassengerRailroadCar> result=new ArrayList<>();
+        List<PassengerRailroadCar> result = new ArrayList<>();
         for(PassengerRailroadCar prc: passengerTrain) {
-            if (prc.getPassengers()>=from&&prc.getPassengers()<=to) {
+            if (prc.getPassengers() >= from && prc.getPassengers() <= to) {
                 result.add(prc);
             }
         }
@@ -99,6 +99,18 @@ public class PassengerRailroadCar extends RailroadCar {
                 && (Double.compare(this.getLuggage(), prc.getLuggage()) == 0)
                 && (Double.compare(this.getAmenities(), prc.getAmenities()) == 0));
     }
+
+    @Override
+    public String toString() {
+        return "{id: "+this.getId()
+                +", model: "+this.getModel()
+                +", wheels: "+this.getWheels()
+                +", passengers: "+this.getPassengers()
+                +", luggage: "+this.getLuggage()
+                +", amenities: "+this.getAmenities()
+                +"}";
+    }
+
     public class AmenitiesComparator implements Comparator<PassengerRailroadCar> {
         @Override
         public int compare(PassengerRailroadCar a, PassengerRailroadCar b) {

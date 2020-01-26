@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/bank"
+        xmlns:tns="http://www.example.com/bank"
+        elementFormDefault="qualified">
+    <element name="Bank">
+        <complexType>
+            <sequence>
+                <element name="Account"
+                         type="tns:Account"
+                         maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Account">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="Country" type="string"/>
+            <element name="Type" type="string">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="On-demand"/>
+                        <enumeration value="Time"/>
+                        <enumeration value="Transactional"/>
+                        <enumeration value="Saving"/>
+                        <enumeration value="Metal"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="Depositor" type="string">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[A-Z][a-z]{1,31}((\s[A-Z][a-z]{1,31})|(\s[a-z]{2,32})){1,14}"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="Amount-on-deposit" type="positiveInteger"/>
+            <element name="Profitability" type="double"/>
+            <element name="Time-constraints" type="date"/>
+        </sequence>
+        <attribute name="id" type="positiveInteger" use="required" />
+    </complexType>
+</schema>

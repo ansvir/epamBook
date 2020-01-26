@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bank xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.example.com/bank"
+    xsi:schemaLocation="http://www.example.com/students bank.xsd">
+    <Account id="1020">
+        <Name>NewBank</Name>
+        <Country>Ireland</Country>
+        <Type>Time</Type>
+        <Depositor>Sam Tailor</Depositor>
+        <Amount-on-deposit>20000</Amount-on-deposit>
+        <Profitability>10.5</Profitability>
+        <Time-constraints>2022-04-12</Time-constraints>
+    </Account>
+    <Account id="5000">
+        <Name>SwisBank</Name>
+        <Country>Switzerland</Country>
+        <Type>Time</Type>
+        <Depositor>Tray Olderson</Depositor>
+        <Amount-on-deposit>50000</Amount-on-deposit>
+        <Profitability>11.5</Profitability>
+        <Time-constraints>2025-10-15</Time-constraints>
+    </Account>
+    <Account id="2500">
+        <Name>Bank1000</Name>
+        <Country>France</Country>
+        <Type>Transactional</Type>
+        <Depositor>Helena Urwill</Depositor>
+        <Amount-on-deposit>45000</Amount-on-deposit>
+        <Profitability>10.4</Profitability>
+        <Time-constraints>2027-01-25</Time-constraints>
+    </Account>
+    <Account id="2700">
+        <Name>Bank1000</Name>
+        <Country>France</Country>
+        <Type>Transactional</Type>
+        <Depositor>Safo de Olaf</Depositor>
+        <Amount-on-deposit>20000</Amount-on-deposit>
+        <Profitability>10.0</Profitability>
+        <Time-constraints>2024-12-11</Time-constraints>
+    </Account>
+    <Account id="2800">
+        <Name>Bank1000</Name>
+        <Country>France</Country>
+        <Type>On-demand</Type>
+        <Depositor>Mishon Braul</Depositor>
+        <Amount-on-deposit>25000</Amount-on-deposit>
+        <Profitability>12.5</Profitability>
+        <Time-constraints>2025-08-10</Time-constraints>
+    </Account>
+    <Account id="2020">
+        <Name>NewBank</Name>
+        <Country>Ireland</Country>
+        <Type>Transactional</Type>
+        <Depositor>Nite Oswald</Depositor>
+        <Amount-on-deposit>42000</Amount-on-deposit>
+        <Profitability>10.2</Profitability>
+        <Time-constraints>2025-02-17</Time-constraints>
+    </Account>
+    <Account id="151005">
+        <Name>Bank "Tovarish"</Name>
+        <Country>Russia</Country>
+        <Type>On-demand</Type>
+        <Depositor>Petr Kamenshikov</Depositor>
+        <Amount-on-deposit>20000</Amount-on-deposit>
+        <Profitability>11.8</Profitability>
+        <Time-constraints>2022-08-25</Time-constraints>
+    </Account>
+    <Account id="254181">
+        <Name>Bank "Tovarish"</Name>
+        <Country>Russia</Country>
+        <Type>Time</Type>
+        <Depositor>Olga Nabokova</Depositor>
+        <Amount-on-deposit>70000</Amount-on-deposit>
+        <Profitability>14.5</Profitability>
+        <Time-constraints>2024-05-21</Time-constraints>
+    </Account>
+    <Account id="7000">
+        <Name>SwisBank</Name>
+        <Country>Switzerland</Country>
+        <Type>Metal</Type>
+        <Depositor>Gabriel Fynn</Depositor>
+        <Amount-on-deposit>55000</Amount-on-deposit>
+        <Profitability>12.5</Profitability>
+        <Time-constraints>2022-10-08</Time-constraints>
+    </Account>
+    <Account id="8000">
+        <Name>SwisBank</Name>
+        <Country>Switzerland</Country>
+        <Type>Time</Type>
+        <Depositor>Corsin David</Depositor>
+        <Amount-on-deposit>41000</Amount-on-deposit>
+        <Profitability>10.7</Profitability>
+        <Time-constraints>2024-11-01</Time-constraints>
+    </Account>
+</Bank>

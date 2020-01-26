@@ -12,7 +12,7 @@ public class TestChapterOne {
         int result;
         int expectedResult=55;
         result=ChapterOne.task12(number);
-        assertEquals(result, expectedResult);
+        assertEquals(expectedResult, result);
     }
 
     @Test
@@ -21,6 +21,6 @@ public class TestChapterOne {
         int result;
         int expectedResult=-1;
         result=ChapterOne.task12(number);
-        assertEquals(result,expectedResult);
+        assertEquals(expectedResult, result);
     }
 }

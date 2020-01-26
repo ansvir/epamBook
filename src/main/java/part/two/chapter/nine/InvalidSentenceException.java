@@ -1,4 +1,4 @@
-package part.two.chapter.three;
+package part.two.chapter.nine;
 
 public class InvalidSentenceException extends Exception {
     private String message;
